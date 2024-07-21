@@ -22,5 +22,8 @@ function checkAnswer() {
     }
 }
 
+// Retrieve the "Submit Answer" button
+const submitButton = document.getElementById('submit-answer');
+
 // Add an event listener to the "Submit Answer" button
-document.getElementById('submit-answer').addEventListener('click', checkAnswer);
+submitButton.addEventListener('click', checkAnswer);
