@@ -9,17 +9,12 @@ function checkAnswer() {
     // Get the feedback element
     const feedback = document.getElementById('feedback');
 
-    // Check if an answer was selected
-    if (userAnswer) {
-        // Compare user's answer to the correct answer
-        if (userAnswer.value === correctAnswer) {
-            feedback.textContent = "Correct! Well done.";
-        } else {
-            feedback.textContent = "That's incorrect. Try again!";
-        }
-    } else {
-        feedback.textContent = "Please select an answer.";
-    }
+    // Provide feedback based on whether an answer was selected and if it is correct
+    feedback.textContent = userAnswer
+        ? userAnswer.value === correctAnswer
+            ? "Correct! Well done."
+            : "That's incorrect. Try again!"
+        : "Please select an answer.";
 }
 
 // Add an event listener to the "Submit Answer" button
